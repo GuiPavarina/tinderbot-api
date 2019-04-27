@@ -1,6 +1,6 @@
-package com.tinderbot.entities;
+package com.tinderbot.entities.requests;
 
-public class FacebookAccessToken {
+public class AccessTokenRequest {
 	
 	private String token;
 

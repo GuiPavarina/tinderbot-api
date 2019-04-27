@@ -8,7 +8,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
 import com.tinderbot.configurations.SecurityConfig;
-import com.tinderbot.services.UserPrinciple;
+import com.tinderbot.entities.UserPrinciple;
 
 import java.util.Date;
 

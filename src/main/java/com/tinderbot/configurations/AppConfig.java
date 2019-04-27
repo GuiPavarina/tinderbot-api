@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @Configuration
-@EnableMongoRepositories(basePackages = "com.tinderbot.repository")
+@EnableMongoRepositories(basePackages = "com.tinderbot.repositories")
 @PropertySource("application.properties")
 @EnableScheduling
 public class AppConfig {

@@ -1,10 +1,10 @@
-package com.tinderbot.entities;
+package com.tinderbot.entities.requests;
 
-public class Id {
+public class IdRequest {
 
 	private String id;
 	
-	public Id() {
+	public IdRequest() {
 		
 	}
 

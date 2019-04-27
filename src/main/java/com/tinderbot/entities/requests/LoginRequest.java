@@ -1,15 +1,12 @@
-package com.tinderbot.entities;
+package com.tinderbot.entities.requests;
 
-import javax.validation.constraints.*;
+import javax.validation.constraints.Size;
 
-public class SignUpForm {
-
-    @Size(min = 3, max = 50)
+public class LoginRequest {
+    
+	@Size(min=3, max = 60)
     private String username;
 
-    @Size(max = 60)
-    private String email;
-       
     @Size(min = 6, max = 40)
     private String password;
 
@@ -21,14 +18,6 @@ public class SignUpForm {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -36,5 +25,4 @@ public class SignUpForm {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }

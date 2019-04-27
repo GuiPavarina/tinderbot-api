@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.tinderbot.entities.User;
+import com.tinderbot.entities.UserPrinciple;
 import com.tinderbot.repositories.UserRepository;
 
 @Service

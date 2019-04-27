@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tinderbot.configurations.security.JwtProvider;
-import com.tinderbot.entities.LoginForm;
-import com.tinderbot.entities.SignUpForm;
 import com.tinderbot.entities.User;
+import com.tinderbot.entities.requests.LoginRequest;
+import com.tinderbot.entities.requests.SignUpRequest;
 import com.tinderbot.entities.responses.JwtResponse;
 import com.tinderbot.repositories.UserRepository;
 
@@ -44,7 +44,7 @@ public class AuthResource {
 	JwtProvider jwtProvider;
 
 	@PostMapping("/signin")
-	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginForm loginRequest) {
+	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
 		Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
@@ -58,7 +58,7 @@ public class AuthResource {
 	}
 
 	@PostMapping("/signup")
-	public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpForm signUpRequest) {
+	public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
 		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
 			return ResponseEntity.badRequest().build();
 		}

@@ -1,4 +1,4 @@
-package com.tinderbot.entities;
+package com.tinderbot.entities.requests;
 
 public class MessageRequest {
 	

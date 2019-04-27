@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tinderbot.configurations.security.JwtProvider;
-import com.tinderbot.entities.FacebookAccessToken;
 import com.tinderbot.entities.Notifications;
 import com.tinderbot.entities.User;
+import com.tinderbot.entities.requests.AccessTokenRequest;
 import com.tinderbot.entities.responses.ProfileResponse;
 import com.tinderbot.repositories.MatchUserRepository;
 import com.tinderbot.repositories.NotificationRepository;
@@ -58,7 +58,7 @@ public class ProfileResource {
 	}
 	
 	@RequestMapping(value = "/register/token",	method = RequestMethod.POST, consumes = "application/json")
-	public ResponseEntity<?> validToken(HttpServletRequest request, @RequestBody FacebookAccessToken facebookAccessToken){
+	public ResponseEntity<?> validToken(HttpServletRequest request, @RequestBody AccessTokenRequest facebookAccessToken){
 		
 		String header = request.getHeader("Authorization");
 		String username = jwtProvider.getUserNameFromJwtToken(header);

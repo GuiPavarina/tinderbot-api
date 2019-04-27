@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tinderbot.configurations.security.JwtProvider;
-import com.tinderbot.entities.Id;
 import com.tinderbot.entities.MatchUser;
-import com.tinderbot.entities.MessageRequest;
 import com.tinderbot.entities.User;
+import com.tinderbot.entities.requests.IdRequest;
+import com.tinderbot.entities.requests.MessageRequest;
 import com.tinderbot.entities.responses.PaginationResponse;
 import com.tinderbot.repositories.MatchUserRepository;
 import com.tinderbot.repositories.UserRepository;
@@ -75,7 +75,7 @@ public class MatchResource {
 	}
 		
 	@RequestMapping(value = "/block" , method = RequestMethod.POST)
-	public ResponseEntity<?> blockUser(HttpServletRequest request, @RequestBody Id id){
+	public ResponseEntity<?> blockUser(HttpServletRequest request, @RequestBody IdRequest id){
 		
 		String header = request.getHeader("Authorization");   
         String username = jwtProvider.getUserNameFromJwtToken(header);

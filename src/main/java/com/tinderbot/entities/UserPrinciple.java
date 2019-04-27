@@ -1,7 +1,6 @@
-package com.tinderbot.services;
+package com.tinderbot.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.tinderbot.entities.User;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
