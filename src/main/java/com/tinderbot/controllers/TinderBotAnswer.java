@@ -8,9 +8,9 @@ import org.springframework.stereotype.Controller;
 
 import com.tinderbot.entities.NewMessages;
 import com.tinderbot.entities.User;
-import com.tinderbot.repository.MatchUserRepository;
+import com.tinderbot.repositories.MatchUserRepository;
 import com.tinderbot.services.TinderServiceImpl;
-import com.tinderbot.watsonservices.WatsonServiceImpl;
+import com.tinderbot.services.watson.WatsonServiceImpl;
 
 @Controller("tinderBotAnswer")
 public class TinderBotAnswer {

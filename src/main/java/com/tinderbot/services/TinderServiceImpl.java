@@ -6,19 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tinderbot.entities.User;
-import com.tinderbot.tinderservices.ITinderService;
-import com.tinderbot.tinderservices.TinderAnotherUserProfileServiceImpl;
-import com.tinderbot.tinderservices.TinderChangeLocationServiceImpl;
-import com.tinderbot.tinderservices.TinderLikeUserServiceImpl;
-import com.tinderbot.tinderservices.TinderMatchFromIdServiceImpl;
-import com.tinderbot.tinderservices.TinderMessageFromIdServiceImpl;
-import com.tinderbot.tinderservices.TinderMetadataServiceImpl;
-import com.tinderbot.tinderservices.TinderPassUserServiceImpl;
-import com.tinderbot.tinderservices.TinderRecommendationsServiceImpl;
-import com.tinderbot.tinderservices.TinderSendMessageServiceImpl;
-import com.tinderbot.tinderservices.TinderSuperLikeUserServiceImpl;
-import com.tinderbot.tinderservices.TinderUpdatesServiceImpl;
-import com.tinderbot.tinderservices.TinderUserProfileServiceImpl;
+import com.tinderbot.services.tinder.ITinderService;
+import com.tinderbot.services.tinder.TinderAnotherUserProfileServiceImpl;
+import com.tinderbot.services.tinder.TinderChangeLocationServiceImpl;
+import com.tinderbot.services.tinder.TinderLikeUserServiceImpl;
+import com.tinderbot.services.tinder.TinderMatchFromIdServiceImpl;
+import com.tinderbot.services.tinder.TinderMessageFromIdServiceImpl;
+import com.tinderbot.services.tinder.TinderMetadataServiceImpl;
+import com.tinderbot.services.tinder.TinderPassUserServiceImpl;
+import com.tinderbot.services.tinder.TinderRecommendationsServiceImpl;
+import com.tinderbot.services.tinder.TinderSendMessageServiceImpl;
+import com.tinderbot.services.tinder.TinderSuperLikeUserServiceImpl;
+import com.tinderbot.services.tinder.TinderUpdatesServiceImpl;
+import com.tinderbot.services.tinder.TinderUserProfileServiceImpl;
 
 @Service("tinderService")
 public class TinderServiceImpl implements ITinderService {

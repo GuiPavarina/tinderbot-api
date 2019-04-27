@@ -11,10 +11,10 @@ import com.tinderbot.entities.MatchUser;
 import com.tinderbot.entities.Message;
 import com.tinderbot.entities.NewMessages;
 import com.tinderbot.entities.User;
-import com.tinderbot.repository.MatchUserRepository;
-import com.tinderbot.responsereader.TinderUpdatesResponseReader;
-import com.tinderbot.tinderservices.ITinderService;
+import com.tinderbot.repositories.MatchUserRepository;
+import com.tinderbot.services.tinder.ITinderService;
 import com.tinderbot.utils.LoggerUtils;
+import com.tinderbot.utils.readers.TinderUpdatesResponseReader;
 
 @Service("tinderBotUpdateServiceImpl")
 public class TinderBotUpdateServiceImpl {
