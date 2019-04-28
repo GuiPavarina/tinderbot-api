@@ -39,7 +39,7 @@ public class TinderAuthenticationServiceImpl {
 			
 			con.setRequestMethod("POST");
 			LOGGER.info(facebookAccessToken);
-			json.accumulate("facebook_token", facebookAccessToken);
+			json.accumulate("token", facebookAccessToken);
 
 			con.setDoOutput(true);
 			con.setDoInput(true);

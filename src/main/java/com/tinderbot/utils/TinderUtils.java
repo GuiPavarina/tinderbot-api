@@ -10,7 +10,7 @@ public class TinderUtils {
 	 * @return
 	 */
 	public static String getTokenFromJson(JSONObject json) {
-		return json.optString("token");
+		return json.optJSONObject("data").optString("api_token");
 	}
 
 }
