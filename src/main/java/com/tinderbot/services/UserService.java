@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tinderbot.entities.User;
-import com.tinderbot.repository.UserRepository;
-import com.tinderbot.tinderservices.ITinderService;
-import com.tinderbot.tinderservices.TinderAuthenticationServiceImpl;
+import com.tinderbot.repositories.UserRepository;
+import com.tinderbot.services.tinder.ITinderService;
+import com.tinderbot.services.tinder.TinderAuthenticationServiceImpl;
 import com.tinderbot.utils.DateUtils;
 import com.tinderbot.utils.TinderUtils;
 

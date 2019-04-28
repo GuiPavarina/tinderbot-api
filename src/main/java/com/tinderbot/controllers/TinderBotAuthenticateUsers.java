@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.tinderbot.entities.User;
-import com.tinderbot.repository.UserRepository;
-import com.tinderbot.tinderservices.ITinderService;
+import com.tinderbot.repositories.UserRepository;
+import com.tinderbot.services.tinder.ITinderService;
 
 @Controller("tinderBotAuthenticateUsers")
 public class TinderBotAuthenticateUsers {

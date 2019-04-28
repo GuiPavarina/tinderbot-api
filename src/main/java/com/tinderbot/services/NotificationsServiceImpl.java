@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.tinderbot.entities.Message;
 import com.tinderbot.entities.Notifications;
 import com.tinderbot.entities.User;
-import com.tinderbot.repository.NotificationRepository;
+import com.tinderbot.repositories.NotificationRepository;
 
 @Service("notificationsServiceImpl")
 public class NotificationsServiceImpl {
