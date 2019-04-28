@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tinderbot.configurations.security.JwtProvider;
-import com.tinderbot.entities.Notifications;
 import com.tinderbot.entities.User;
 import com.tinderbot.entities.requests.AccessTokenRequest;
 import com.tinderbot.entities.responses.ProfileResponse;
@@ -22,7 +21,7 @@ import com.tinderbot.services.UserService;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping(value = "/api/profile")
+@RequestMapping(value = "/v1/profiles")
 public class ProfileResource {
 	
 	private final static Logger LOGGER = Logger.getLogger(ProfileResource.class);

@@ -14,7 +14,7 @@ import com.tinderbot.repositories.NotificationRepository;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping(value = "/api/notifications")
+@RequestMapping(value = "/v1/notifications")
 public class NotificationsResource {
 
 	@Autowired

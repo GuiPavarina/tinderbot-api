@@ -28,7 +28,7 @@ import com.tinderbot.services.tinder.ITinderService;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping(value = "/api/match")
+@RequestMapping(value = "/v1/matches")
 public class MatchResource {
 	
 	private final static Logger LOGGER = Logger.getLogger(MatchResource.class);
@@ -96,7 +96,7 @@ public class MatchResource {
 		return ResponseEntity.ok().build();
 	}
 	
-	@RequestMapping(value = "/sendmessage", method = RequestMethod.POST)
+	@RequestMapping(value = "/message", method = RequestMethod.POST)
 	public ResponseEntity<?> sendMessage(
 			@RequestHeader(value="Authorization") String authorizationHeader,
 			@RequestBody MessageRequest message

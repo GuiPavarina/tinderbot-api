@@ -26,7 +26,7 @@ import com.tinderbot.repositories.UserRepository;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/v1/auth")
 public class AuthResource {
 	
 	private final static Logger LOGGER = Logger.getLogger(AuthResource.class);
