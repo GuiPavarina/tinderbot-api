@@ -1,12 +1,11 @@
 package com.tinderbot.resources;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -44,10 +43,11 @@ public class ProfileResource {
 	private JwtProvider jwtProvider;
 	
 	@RequestMapping(value = "/info" , method = RequestMethod.GET)
-	public ResponseEntity<ProfileResponse> getInfo(HttpServletRequest request){
+	public ResponseEntity<ProfileResponse> getInfo(
+			@RequestHeader(value="Authorization") String authorizationHeader
+		){
 		
-		String header = request.getHeader("Authorization");
-        String username = jwtProvider.getUserNameFromJwtToken(header);
+        String username = jwtProvider.getUserNameFromJwtToken(authorizationHeader);
 		
 		User user = userRepository.findOneByUsername(username);
 		
@@ -58,10 +58,12 @@ public class ProfileResource {
 	}
 	
 	@RequestMapping(value = "/register/token",	method = RequestMethod.POST, consumes = "application/json")
-	public ResponseEntity<?> validToken(HttpServletRequest request, @RequestBody AccessTokenRequest facebookAccessToken){
+	public ResponseEntity<?> validToken(
+			@RequestHeader(value="Authorization") String authorizationHeader,
+			@RequestBody AccessTokenRequest facebookAccessToken
+		){
 		
-		String header = request.getHeader("Authorization");
-		String username = jwtProvider.getUserNameFromJwtToken(header);
+		String username = jwtProvider.getUserNameFromJwtToken(authorizationHeader);
 		
 		User user = userRepository.findOneByUsername(username);
 		

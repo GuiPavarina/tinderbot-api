@@ -2,8 +2,6 @@ package com.tinderbot.resources;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -12,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -48,13 +47,12 @@ public class MatchResource {
 		
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ResponseEntity<PaginationResponse> matches(
-			HttpServletRequest request,
+			@RequestHeader(value="Authorization") String authorizationHeader,
 			@RequestParam(value="pageSize", required=false) Integer pageSize,
 			@RequestParam(value="page", required=false) Integer page
 		){
 		
-		String header = request.getHeader("Authorization");
-        String username = jwtProvider.getUserNameFromJwtToken(header);
+        String username = jwtProvider.getUserNameFromJwtToken(authorizationHeader);
 			
 		User user = userRepository.findOneByUsername(username);
 		
@@ -75,10 +73,12 @@ public class MatchResource {
 	}
 		
 	@RequestMapping(value = "/block" , method = RequestMethod.POST)
-	public ResponseEntity<?> blockUser(HttpServletRequest request, @RequestBody IdRequest id){
+	public ResponseEntity<?> blockUser(
+			@RequestHeader(value="Authorization") String authorizationHeader,
+			@RequestBody IdRequest id
+		){
 		
-		String header = request.getHeader("Authorization");   
-        String username = jwtProvider.getUserNameFromJwtToken(header);
+        String username = jwtProvider.getUserNameFromJwtToken(authorizationHeader);
 		
 		User user = userRepository.findOneByUsername(username);
 		
@@ -97,10 +97,12 @@ public class MatchResource {
 	}
 	
 	@RequestMapping(value = "/sendmessage", method = RequestMethod.POST)
-	public ResponseEntity<?> sendMessage(HttpServletRequest request, @RequestBody MessageRequest message){
+	public ResponseEntity<?> sendMessage(
+			@RequestHeader(value="Authorization") String authorizationHeader,
+			@RequestBody MessageRequest message
+		){
 		
-		String header = request.getHeader("Authorization");   
-        String username = jwtProvider.getUserNameFromJwtToken(header);
+        String username = jwtProvider.getUserNameFromJwtToken(authorizationHeader);
 		
 		User user = userRepository.findOneByUsername(username);
 		
@@ -118,10 +120,12 @@ public class MatchResource {
 	}
 	
 	@RequestMapping(value = "/info/{id}", method = RequestMethod.GET)
-	public ResponseEntity<MatchUser> getInformation(HttpServletRequest request, @PathVariable String id ){
+	public ResponseEntity<MatchUser> getInformation(
+			@RequestHeader(value="Authorization") String authorizationHeader,
+			@PathVariable String id 
+		){
 			
-		String header = request.getHeader("Authorization");   
-        String username = jwtProvider.getUserNameFromJwtToken(header);
+        String username = jwtProvider.getUserNameFromJwtToken(authorizationHeader);
 		
 		User user = userRepository.findOneByUsername(username);
 		
