@@ -49,7 +49,6 @@ public class TinderSendMessageServiceImpl {
 			con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
 			con.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36");
 			con.setRequestProperty("plataform", "web");
-			con.setRequestProperty("user-session-id", "fecd0490-7fdd-4d66-b7ee-82d509bfa4a8");
 
 			OutputStream os = con.getOutputStream();
 			os.write(json.toString().getBytes("UTF-8"));
