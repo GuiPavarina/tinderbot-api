@@ -109,8 +109,8 @@ public class MatchResource {
 		if(message.getId().isEmpty() || message.getMessage().isEmpty())
 			return ResponseEntity.badRequest().build();
 		
-		Boolean exists = matchUserRepository.existsByTinderIdAndUserId(user.getTinderId(), message.getId());
-		
+		Boolean exists = matchUserRepository.existsByTinderIdAndMatchId(user.getTinderId(), message.getId());
+				
 		if(!exists)
 			return ResponseEntity.badRequest().build();
 		

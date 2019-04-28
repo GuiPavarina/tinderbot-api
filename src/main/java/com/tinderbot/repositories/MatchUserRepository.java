@@ -12,7 +12,7 @@ import com.tinderbot.entities.MatchUser;
 @Repository("matchUserRepository")
 public interface MatchUserRepository extends MongoRepository<MatchUser, String> {
 	
-	Boolean existsByTinderIdAndUserId(String tinderId, String userId);
+	Boolean existsByTinderIdAndMatchId(String tinderId, String matchId);
 	
 	MatchUser findByTinderIdAndUserId(String tinderId, String userId);
 	
