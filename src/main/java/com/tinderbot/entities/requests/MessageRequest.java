@@ -2,7 +2,7 @@ package com.tinderbot.entities.requests;
 
 public class MessageRequest {
 	
-	private String id;
+	private String matchId;
 	
 	private String message;
 
@@ -10,22 +10,22 @@ public class MessageRequest {
 		
 	}
 
-	public MessageRequest(String id, String message) {
+	public MessageRequest(String matchId, String message) {
 		super();
-		this.id = id;
+		this.matchId = matchId;
 		this.message = message;
 	}
 
-	public String getId() {
-		return id;
+	public String getMatchId() {
+		return matchId;
 	}
 
 	public String getMessage() {
 		return message;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setMatchId(String matchId) {
+		this.matchId = matchId;
 	}
 
 	public void setMessage(String message) {
@@ -34,7 +34,7 @@ public class MessageRequest {
 	
 	@Override
 	public String toString() {
-		return String.format("MessageRequest [id=%s, message=%s]", id, message);
+		return String.format("MessageRequest [matchId=%s, message=%s]", matchId, message);
 	}
 
 }

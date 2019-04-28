@@ -31,15 +31,15 @@ public class TinderSendMessageServiceImpl {
 	 * @param id
 	 * @return JSONObject
 	 */
-	public JSONObject execute(User user,String message, String id) {
+	public JSONObject execute(User user,String message, String matchId) {
 		JSONObject json = new JSONObject();
 		try {
-			URL url = new URL(tinderConfig.getSendMessage() + id);
+			URL url = new URL(tinderConfig.getSendMessage() + matchId);
 			HttpsURLConnection con = (HttpsURLConnection) url.openConnection();
 
 			con.setRequestMethod("POST");
 			
-			json.accumulate("matchId", id);
+			json.accumulate("matchId", matchId);
 			json.accumulate("message", message);
 			json.accumulate("userId", user.getTinderId());
 			

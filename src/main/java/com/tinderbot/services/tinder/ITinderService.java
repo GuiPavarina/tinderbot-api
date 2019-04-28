@@ -68,7 +68,7 @@ public interface ITinderService {
 	 * @param id (match id)
 	 * @return JSONObject
 	 */
-	JSONObject sendMessage(User user,String message, String id);
+	JSONObject sendMessage(User user,String message, String matchId);
 	
 	/**
 	 * Super like user by its id.

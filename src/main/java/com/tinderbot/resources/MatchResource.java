@@ -106,15 +106,15 @@ public class MatchResource {
 		
 		User user = userRepository.findOneByUsername(username);
 		
-		if(message.getId().isEmpty() || message.getMessage().isEmpty())
+		if(message.getMatchId().isEmpty() || message.getMessage().isEmpty())
 			return ResponseEntity.badRequest().build();
 		
-		Boolean exists = matchUserRepository.existsByTinderIdAndMatchId(user.getTinderId(), message.getId());
+		Boolean exists = matchUserRepository.existsByTinderIdAndMatchId(user.getTinderId(), message.getMatchId());
 				
 		if(!exists)
 			return ResponseEntity.badRequest().build();
 		
-		tinderService.sendMessage(user, message.getMessage(), message.getId());
+		tinderService.sendMessage(user, message.getMessage(), message.getMatchId());
 		
 		return ResponseEntity.ok().build();
 	}
