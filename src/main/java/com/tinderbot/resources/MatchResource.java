@@ -136,5 +136,23 @@ public class MatchResource {
 		
 		return ResponseEntity.ok().body(matchUser);
 	}
+	
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public ResponseEntity<List<MatchUser>> search(
+			@RequestHeader(value="Authorization") String authorizationHeader,
+			@RequestParam(value="name", required=true) String name
+		) {
+		
+		if(name.length() < 3)
+			return ResponseEntity.badRequest().build();
+		
+		String username = jwtProvider.getUserNameFromJwtToken(authorizationHeader);
+			
+		User user = userRepository.findOneByUsername(username);
+		
+		List<MatchUser> matches = matchUserRepository.findByNameAndUserId(name, user.getId());
+		
+		return ResponseEntity.ok().body(matches);
+	}
 
 }
