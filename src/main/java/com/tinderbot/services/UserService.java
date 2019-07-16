@@ -30,15 +30,13 @@ public class UserService {
 	
 	/**
 	 * Returns all users authenticated on Tinder
-	 * @return
+	 * @return list<User>
 	 */
 	public List<User> getAllAuthenticated(){
-		List<User> list = userRepository.findAll()
+		return userRepository.findAll()
 				.stream()
 				.filter(user -> user.isAuthenticated())
 				.collect(Collectors.toList());
-		
-		return list;
 	}
 	
 	/**
@@ -107,7 +105,9 @@ public class UserService {
 	 * @return String ISO-8601 Date Format
 	 */
 	public String getLastActivity(User user) {
-		return userRepository.findOneById(user.getId()).getLastActivity();
+		return userRepository
+				.findOneById(user.getId())
+				.getLastActivity();
 	}
 	
 	/**

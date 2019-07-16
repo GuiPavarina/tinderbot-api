@@ -45,7 +45,7 @@ public class TinderBotUpdateServiceImpl {
 
 		matchUserRepository.insert(list);
 
-		LoggerUtils.printListOfMatchUsers(list);
+		LoggerUtils.printList(list, "Adding match: ");
 
 	}
 
@@ -58,7 +58,7 @@ public class TinderBotUpdateServiceImpl {
 		List<MatchUser> list = TinderUpdatesResponseReader.readAllMatches(user.getTinderId(), json);
 		matchUserRepository.insert(list);
 
-		LoggerUtils.printListOfMatchUsers(list);
+		LoggerUtils.printList(list, "Adding match: ");
 
 		List<Message> messages = TinderUpdatesResponseReader.readAllMessages(json);
 
@@ -74,7 +74,7 @@ public class TinderBotUpdateServiceImpl {
 
 		notificationsServiceImpl.addNotifications(user, messages);
 
-		LoggerUtils.printListOfMessages(messages);
+		LoggerUtils.printList(messages, "Adding message: ");
 	}
 
 }
