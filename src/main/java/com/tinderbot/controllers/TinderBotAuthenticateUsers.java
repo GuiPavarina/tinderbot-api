@@ -32,7 +32,7 @@ public class TinderBotAuthenticateUsers {
 		/*
 		 * using the metadata api from tinder to test the api key
 		 */
-		list.stream().forEach((user) -> {
+		list.forEach((user) -> {
 			tinderService.getMetadata(user);
 		});
 	}

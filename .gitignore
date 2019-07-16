@@ -6,6 +6,10 @@
 .project
 .springBeans
 
+
+# intellij
+.idea
+
 ###
 
 target/

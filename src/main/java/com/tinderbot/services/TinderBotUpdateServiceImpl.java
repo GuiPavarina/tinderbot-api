@@ -62,7 +62,7 @@ public class TinderBotUpdateServiceImpl {
 
 		List<Message> messages = TinderUpdatesResponseReader.readAllMessages(json);
 
-		messages.stream().forEach((message) -> {
+		messages.forEach((message) -> {
 			MatchUser matchUser = matchUserRepository.findByMatchId(message.getMatchId());
 			if (!matchUser.getMessages().contains(message))
 				matchUser.getMessages().add(message);

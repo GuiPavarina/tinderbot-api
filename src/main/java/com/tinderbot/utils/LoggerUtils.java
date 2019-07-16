@@ -13,13 +13,13 @@ public class LoggerUtils {
 	
 	public static void printListOfMessages(List<Message> list) {
 		for(Message message : list ) {
-			LOGGER.info("Adding message: " + message.toString());
+			LOGGER.debug("Adding message: " + message.toString());
 		}
 	}
 	
 	public static void printListOfMatchUsers(List<MatchUser> list) {
 		for(MatchUser matchUser : list ) {
-			LOGGER.info("Adding User: " + matchUser.toString());
+			LOGGER.debug("Adding User: " + matchUser.toString());
 		}
 	}
 

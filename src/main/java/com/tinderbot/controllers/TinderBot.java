@@ -29,7 +29,7 @@ public class TinderBot {
 	public void checkUpdates() {
 		List<User> users = userService.getAllAuthenticated();
 		
-		users.stream().forEach((user) -> {
+		users.forEach((user) -> {
 			if (user.getLastActivity().isEmpty())
 				fillInformation(user);
 			else
