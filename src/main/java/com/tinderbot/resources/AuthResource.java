@@ -32,16 +32,16 @@ public class AuthResource {
 	private final static Logger LOGGER = Logger.getLogger(AuthResource.class);
 	
 	@Autowired
-	AuthenticationManager authenticationManager;
+	private AuthenticationManager authenticationManager;
 
 	@Autowired
-	UserRepository userRepository;
+	private UserRepository userRepository;
 
 	@Autowired
-	PasswordEncoder encoder;
+	private PasswordEncoder encoder;
 
 	@Autowired
-	JwtProvider jwtProvider;
+	private JwtProvider jwtProvider;
 
 	@PostMapping("/signin")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {

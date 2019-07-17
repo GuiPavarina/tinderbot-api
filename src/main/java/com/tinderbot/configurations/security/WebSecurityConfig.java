@@ -25,7 +25,7 @@ import com.tinderbot.services.UserDetailsServiceImpl;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 
 	@Autowired
-    UserDetailsServiceImpl userDetailsService;
+    private UserDetailsServiceImpl userDetailsService;
     
     @Autowired
     private JwtAuthEntryPoint unauthorizedHandler;

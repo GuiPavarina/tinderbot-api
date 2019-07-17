@@ -15,7 +15,7 @@ import com.tinderbot.repositories.UserRepository;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
-	UserRepository userRepository;
+	private UserRepository userRepository;
 
 	@Override
 	@Transactional

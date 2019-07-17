@@ -35,14 +35,15 @@ public class UserService {
 	public List<User> getAllAuthenticated(){
 		return userRepository.findAll()
 				.stream()
-				.filter(user -> user.isAuthenticated())
+				.filter(User::isAuthenticated)
 				.collect(Collectors.toList());
 	}
 	
 	/**
 	 * Authenticate an user using facebook access token and id
-	 * @param user
-	 * @return
+	 * @param user user
+	 * @param facebookAccessToken facebook access token
+	 * @return boolean
 	 */
 	public boolean authUser(User user, String facebookAccessToken) {
 		
@@ -54,13 +55,13 @@ public class UserService {
 
 			//TODO
 			// - Better log message using names in future
-			LOGGER.info("User:  was not authenticated");
+			LOGGER.info("User: " + user.getUsername() + " is not authenticated");
 			
 			setAuthenticated(user,false);
 			
 			return false;
 		}
-		LOGGER.info("User: " + user + " was authenticated , token: " + token);
+		LOGGER.info("User: " + user.getUsername() + "is authenticated");
 		user.setTinderToken(token);
 		
 		String tinderId = tinderService.getMetadata(user).optJSONObject("user").optString("_id");
@@ -101,7 +102,7 @@ public class UserService {
 	}
 	
 	/**
-	 * Gets last Activity wihtout updating
+	 * Gets last Activity without updating
 	 * @return String ISO-8601 Date Format
 	 */
 	public String getLastActivity(User user) {

@@ -54,7 +54,7 @@ public class WatsonServiceImpl {
 		
 		LOGGER.info("Received: " + message + " - Response: " + responseString);
 		
-		if(responseString == null || responseString.isEmpty()) {
+		if(responseString.isEmpty()) {
 			responseString = "oi";
 		}
 		

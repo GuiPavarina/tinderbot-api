@@ -28,7 +28,7 @@ public class InputToJson {
 		}
 
 		input.close();
-		System.out.println(inputLine.toString());
+
 		JSONObject json;
 		try {
 			json = new JSONObject(inputLine.toString());
